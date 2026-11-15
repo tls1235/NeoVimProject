@@ -6,8 +6,8 @@ namespace NeoVimProject.Pages;
 
 public class LoginModel : PageModel
 {
-    [BindProperty, Required] public string Username { get; set; }
-    [BindProperty, Required, DataType(DataType.Password)] public string Password { get; set; }
+    [BindProperty, Required] public string Username { get; set; } = string.Empty;
+    [BindProperty, Required, DataType(DataType.Password)] public string Password { get; set; } = string.Empty;
 
     public void OnGet() { }
 

@@ -6,11 +6,11 @@ namespace NeoVimProject.Pages;
 
 public class PasswordRecoverModel : PageModel
 {
-    [BindProperty, Required] public string Username { get; set; }
-    [BindProperty, Required] public string Question1 { get; set; }
-    [BindProperty, Required] public string Answer1 { get; set; }
-    [BindProperty, Required] public string Question2 { get; set; }
-    [BindProperty, Required] public string Answer2 { get; set; }
+    [BindProperty, Required] public string Username { get; set; } = string.Empty;
+    [BindProperty, Required] public string Question1 { get; set; } = string.Empty;
+    [BindProperty, Required] public string Answer1 { get; set; } = string.Empty;
+    [BindProperty, Required] public string Question2 { get; set; } = string.Empty;
+    [BindProperty, Required] public string Answer2 { get; set; } = string.Empty;
 
     public void OnGet() { }
 

@@ -1,0 +1,23 @@
+@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+    ViewData["Tag"] = "Error";
+    ViewData["Lead"] = "An error occurred while processing your request.";
+}
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h2>Development Mode</h2>
+<p>
+    Swapping to the <strong>Development</strong> environment displays detailed information about the error that occurred.
+</p>
+<p>
+    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
+    For local debugging, set the <code>ASPNETCORE_ENVIRONMENT</code> environment variable to <code>Development</code> and restart the app.
+</p>
