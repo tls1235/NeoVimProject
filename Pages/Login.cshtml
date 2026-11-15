@@ -1,0 +1,24 @@
+@page
+@model NeoVimProject.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    ViewData["Tag"] = "Account";
+    ViewData["Lead"] = "Welcome back. Sign in to continue.";
+}
+
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <form method="post" class="form-card">
+                    <div asp-validation-summary="All" class="text-danger small mb-2"></div>
+                    <div class="row g-3">
+                        <div class="col-12"><label class="form-label" for="Username">Username</label><input class="form-control" id="Username" name="Username" type="text" placeholder="your_username" autocomplete="username" required /></div>
+                        <div class="col-12"><label class="form-label" for="Password">Password</label><input class="form-control" id="Password" name="Password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="current-password" required /></div>
+                        <div class="col-12 d-grid"><button type="submit" class="btn btn-nv">Login</button></div>
+                    </div>
+                    <hr />
+                    <p class="mb-1">New here? <a class="form-link" asp-page="/Register">Create an account (Register)</a></p>
+                    <p class="mb-0"><a class="form-link" asp-page="/PasswordRecover">Forgot your password?</a></p>
+                </form>
+            </div>
+        </div>
+

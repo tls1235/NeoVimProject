@@ -1,0 +1,16 @@
+@page
+@{
+    ViewData["Title"] = "Colorschemes";
+    ViewData["Tag"] = "Ecosystem";
+    ViewData["Lead"] = "Neovim themes are plain Lua &mdash; this very site is styled with the default Neovim palette.";
+}
+
+        <h2>This site&rsquo;s palette</h2>
+        <p>Colours are taken from the dark variant of Neovim&rsquo;s default colorscheme, introduced in 0.10.</p>
+        <div class="row row-cols-2 row-cols-md-5 g-3 mb-4"><div class="col"><div class="swatch"><div class="chip" style="background:#14161b"></div><div class="meta"><strong>Background</strong><br />#14161b</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#07080d"></div><div class="meta"><strong>Dark surface</strong><br />#07080d</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#e0e2ea"></div><div class="meta"><strong>Foreground</strong><br />#e0e2ea</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#9b9ea4"></div><div class="meta"><strong>Comment grey</strong><br />#9b9ea4</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#b3f6c0"></div><div class="meta"><strong>Green</strong><br />#b3f6c0</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#8cf8f7"></div><div class="meta"><strong>Cyan</strong><br />#8cf8f7</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#a6dbff"></div><div class="meta"><strong>Blue</strong><br />#a6dbff</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#ffcaff"></div><div class="meta"><strong>Magenta</strong><br />#ffcaff</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#fce094"></div><div class="meta"><strong>Yellow</strong><br />#fce094</div></div></div><div class="col"><div class="swatch"><div class="chip" style="background:#ffc0b9"></div><div class="meta"><strong>Red</strong><br />#ffc0b9</div></div></div></div>
+        <h2>Popular colorschemes</h2>
+        <div class="table-responsive"><table class="table nv-table table-striped"><thead><tr><th>Theme</th><th>Style</th><th>Variants</th></tr></thead><tbody><tr><td><code>tokyonight.nvim</code></td><td>Cool blues and purples</td><td>night, storm, moon, day</td></tr><tr><td><code>catppuccin</code></td><td>Soft pastel</td><td>mocha, macchiato, frappe, latte</td></tr><tr><td><code>gruvbox.nvim</code></td><td>Warm retro</td><td>dark, light</td></tr><tr><td><code>kanagawa.nvim</code></td><td>Inspired by Japanese art</td><td>wave, dragon, lotus</td></tr><tr><td><code>rose-pine</code></td><td>Low-contrast, cozy</td><td>main, moon, dawn</td></tr></tbody></table></div>
+        <h2>Applying a theme</h2>
+        <pre class="code-block" data-lang="lua"><code>vim.cmd.colorscheme("tokyonight")</code></pre>
+        <p>Change it live with <code>:colorscheme &lt;name&gt;</code>; press <kbd>Tab</kbd> to cycle through installed themes.</p>
+

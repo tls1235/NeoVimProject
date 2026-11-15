@@ -1,0 +1,22 @@
+@page
+@{
+    ViewData["Title"] = "Motions & Operators";
+    ViewData["Tag"] = "Learn";
+    ViewData["Lead"] = "The grammar of Vim: combine an operator with a motion to edit at the speed of thought.";
+}
+
+        <h2>Basic motions</h2>
+        <div class="table-responsive"><table class="table nv-table table-striped"><thead><tr><th>Keys</th><th>Moves to</th><th>Category</th></tr></thead><tbody><tr><td><kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd></td><td>Left, down, up, right</td><td><span class="badge badge-nv-blue">character</span></td></tr><tr><td><kbd>w</kbd> <kbd>b</kbd> <kbd>e</kbd></td><td>Next word, previous word, end of word</td><td><span class="badge badge-nv-green">word</span></td></tr><tr><td><kbd>0</kbd> <kbd>^</kbd> <kbd>$</kbd></td><td>Line start, first non-blank, line end</td><td><span class="badge badge-nv-yellow">line</span></td></tr><tr><td><kbd>gg</kbd> <kbd>G</kbd></td><td>First line, last line</td><td><span class="badge badge-nv-magenta">file</span></td></tr><tr><td><kbd>f</kbd>{char} <kbd>t</kbd>{char}</td><td>Jump to / before a character on the line</td><td><span class="badge badge-nv-yellow">line</span></td></tr><tr><td><kbd>{</kbd> <kbd>}</kbd></td><td>Previous / next paragraph</td><td><span class="badge badge-nv-magenta">block</span></td></tr><tr><td><kbd>%</kbd></td><td>Matching bracket</td><td><span class="badge badge-nv-cyan">match</span></td></tr></tbody></table></div>
+        <h2>Operators</h2>
+        <ul>
+            <li><kbd>d</kbd> &ndash; delete &nbsp; <kbd>c</kbd> &ndash; change &nbsp; <kbd>y</kbd> &ndash; yank (copy)</li>
+            <li><kbd>&gt;</kbd> / <kbd>&lt;</kbd> &ndash; indent / outdent &nbsp; <kbd>gu</kbd> / <kbd>gU</kbd> &ndash; lower / upper case</li>
+        </ul>
+        <h2>Text objects</h2>
+        <p>Combine an operator with <code>i</code> (inner) or <code>a</code> (around) and an object:</p>
+        <pre class="code-block" data-lang="normal mode"><code>diw     delete inner word
+ci"     change text inside quotes
+da(     delete around parentheses
+yip     yank inner paragraph
+3dd     delete three lines</code></pre>
+

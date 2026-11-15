@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="38" fill="#2c3e8f"/>
+  <circle cx="60" cy="60" r="38" fill="none" stroke="#a6dbff" stroke-width="2"/>
+  <circle cx="92" cy="26" r="13" fill="#a6dbff"/>
+  <text x="60" y="72" font-family="monospace" font-size="30" font-weight="700" text-anchor="middle" fill="#e0e2ea">Lua</text>
+</svg>

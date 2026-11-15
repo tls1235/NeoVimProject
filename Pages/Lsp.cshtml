@@ -1,0 +1,20 @@
+@page
+@{
+    ViewData["Title"] = "Language Server Protocol";
+    ViewData["Tag"] = "Ecosystem";
+    ViewData["Lead"] = "Neovim ships with a built-in LSP client for completion, diagnostics, go-to-definition and more.";
+}
+
+        <h2>How it works</h2>
+        <p>A <strong>language server</strong> (such as <code>lua_ls</code>, <code>pyright</code> or <code>rust-analyzer</code>) runs in the background and talks to Neovim over JSON-RPC. Neovim only needs to know which server to start for which filetype.</p>
+        <h2>Typical setup</h2>
+        <pre class="code-block" data-lang="lua"><code>-- 1. install the server (e.g. with :Mason), then:
+require("lspconfig").lua_ls.setup({
+  settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+})
+require("lspconfig").pyright.setup({})</code></pre>
+        <p>Edit your <code>~/.config/nvim/init.lua</code> (or <code>lua/plugins/lsp.lua</code>) and restart Neovim, then open a matching file and run <code>:LspInfo</code>.</p>
+        <h2>Features you get</h2>
+        <div class="table-responsive"><table class="table nv-table table-striped"><thead><tr><th>Feature</th><th>Default key / command</th></tr></thead><tbody><tr><td>Hover documentation</td><td><kbd>K</kbd></td></tr><tr><td>Rename symbol</td><td><kbd>grn</kbd></td></tr><tr><td>Code actions</td><td><kbd>gra</kbd></td></tr><tr><td>References</td><td><kbd>grr</kbd></td></tr><tr><td>Diagnostics list</td><td><code>:lua vim.diagnostic.setloclist()</code></td></tr><tr><td>Format buffer</td><td><code>:lua vim.lsp.buf.format()</code></td></tr></tbody></table></div>
+        <p class="text-secondary">Default <code>gr*</code> mappings arrived in Neovim 0.11; older versions need you to map them yourself.</p>
+

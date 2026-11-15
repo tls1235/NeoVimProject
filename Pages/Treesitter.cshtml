@@ -1,0 +1,22 @@
+@page
+@{
+    ViewData["Title"] = "Treesitter";
+    ViewData["Tag"] = "Ecosystem";
+    ViewData["Lead"] = "Parse your code into a real syntax tree for smarter highlighting and text objects.";
+}
+
+        <h2>Why Treesitter?</h2>
+        <ul>
+            <li><strong>Accurate highlighting</strong> &ndash; based on grammar, not regular expressions.</li>
+            <li><strong>Structural text objects</strong> &ndash; select a function or class in one motion.</li>
+            <li><strong>Incremental parsing</strong> &ndash; stays fast on large files.</li>
+        </ul>
+        <h2>Setup</h2>
+        <pre class="code-block" data-lang="lua"><code>require("nvim-treesitter.configs").setup({
+  ensure_installed = { "lua", "vim", "c_sharp", "html", "css", "javascript" },
+  highlight = { enable = true },
+  indent = { enable = true },
+})</code></pre>
+        <h2>Useful commands</h2>
+        <div class="table-responsive"><table class="table nv-table table-striped"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>:TSInstall &lt;lang&gt;</code></td><td>Install a parser</td></tr><tr><td><code>:TSUpdate</code></td><td>Update all parsers</td></tr><tr><td><code>:Inspect</code></td><td>Show highlight groups under the cursor</td></tr><tr><td><code>:InspectTree</code></td><td>Open a live view of the syntax tree</td></tr></tbody></table></div>
+

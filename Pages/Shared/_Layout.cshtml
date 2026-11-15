@@ -1,0 +1,72 @@
+@{
+    var current = ViewContext.RouteData.Values["page"]?.ToString() ?? "";
+    string Act(string p) => p == current ? "active" : "";
+}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] | NeoVimProject</title>
+    <link rel="icon" href="~/img/logo.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-nv sticky-top">
+        <div class="container flex-wrap">
+            <a class="navbar-brand d-flex align-items-center gap-2" asp-page="/Index">
+                <img src="~/img/logo.svg" alt="Neovim logo" width="34" height="34" />
+                <span class="brand-text">NeoVim<span class="brand-accent">Project</span></span>
+            </a>
+            <ul class="navbar-nav flex-wrap me-auto">
+                <li class="nav-item"><a class="nav-link @Act("/Index")" asp-page="/Index">Home</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/History")" asp-page="/History">History</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Install")" asp-page="/Install">Install</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Modes")" asp-page="/Modes">Modes</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Motions")" asp-page="/Motions">Motions</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Keybindings")" asp-page="/Keybindings">Keys</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Plugins")" asp-page="/Plugins">Plugins</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Lsp")" asp-page="/Lsp">LSP</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Treesitter")" asp-page="/Treesitter">Treesitter</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/LuaConfig")" asp-page="/LuaConfig">Lua</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Distros")" asp-page="/Distros">Distros</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Colorschemes")" asp-page="/Colorschemes">Themes</a></li>
+                <li class="nav-item"><a class="nav-link @Act("/Faq")" asp-page="/Faq">FAQ</a></li>
+            </ul>
+            <div class="d-flex gap-2">
+                <a class="btn btn-nv-outline btn-sm" asp-page="/Login">Login</a>
+                <a class="btn btn-nv btn-sm" asp-page="/Register">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    @if (IsSectionDefined("Hero"))
+    {
+        @RenderSection("Hero")
+    }
+    else
+    {
+        <header class="page-hero">
+            <div class="container">
+                <span class="badge badge-nv-green mb-3">@ViewData["Tag"]</span>
+                <h1>@ViewData["Title"]<span class="cursor">&nbsp;</span></h1>
+                <p class="lead">@Html.Raw(ViewData["Lead"])</p>
+            </div>
+        </header>
+    }
+
+    <main class="container py-5">
+        @RenderBody()
+    </main>
+
+    <footer class="statusline">
+        <div class="container d-flex flex-wrap align-items-center gap-3">
+            <span class="mode-block">NORMAL</span>
+            <span class="sl-file"><img src="~/img/logo.svg" alt="" width="16" height="16" /> neovimproject.cshtml</span>
+            <span class="ms-auto sl-info">&copy; 2026 NeoVimProject &mdash; a student project</span>
+        </div>
+    </footer>
+</body>
+</html>

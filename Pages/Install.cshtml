@@ -1,0 +1,19 @@
+@page
+@{
+    ViewData["Title"] = "Installation";
+    ViewData["Tag"] = "Learn";
+    ViewData["Lead"] = "Get Neovim running on Linux, macOS or Windows in under five minutes.";
+}
+
+        <h2>Pick your platform</h2>
+        <h3 class="h5 mt-4">Linux</h3><div><p>Use your package manager:</p><pre class="code-block" data-lang="shell"><code>sudo pacman -S neovim      # Arch / CachyOS
+sudo apt install neovim      # Debian / Ubuntu
+sudo dnf install neovim      # Fedora</code></pre></div><h3 class="h5 mt-4">macOS</h3><div><p>With Homebrew:</p><pre class="code-block" data-lang="shell"><code>brew install neovim</code></pre></div><h3 class="h5 mt-4">Windows</h3><div><p>With winget or Scoop:</p><pre class="code-block" data-lang="powershell"><code>winget install Neovim.Neovim
+scoop install neovim</code></pre></div>
+        <h2>Where the config lives</h2>
+        <div class="table-responsive"><table class="table nv-table table-striped"><thead><tr><th>OS</th><th>Config file</th></tr></thead><tbody><tr><td>Linux / macOS</td><td><code>~/.config/nvim/init.lua</code></td></tr><tr><td>Windows</td><td><code>%LOCALAPPDATA%\nvim\init.lua</code></td></tr></tbody></table></div>
+        <h2>Verify the install</h2>
+        <pre class="code-block" data-lang="shell"><code>nvim --version
+nvim +checkhealth</code></pre>
+        <p>Inside Neovim, run <code>:checkhealth</code> to see missing providers or tools. Start the built-in tutorial with <code>:Tutor</code>.</p>
+

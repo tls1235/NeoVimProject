@@ -1,0 +1,19 @@
+@page
+@{
+  ViewData["Title"] = "FAQ";
+  ViewData["Tag"] = "Help";
+  ViewData["Lead"] = "Answers to the questions every new Neovim user asks.";
+}
+
+<h3 class="h5 mt-4">Is Neovim hard to learn?</h3>
+<div>The first week is the steepest. Run <code>:Tutor</code> daily and stay in Normal mode; muscle memory arrives faster than most people expect.</div>
+<h3 class="h5 mt-4">Will my .vimrc work?</h3>
+<div>Mostly yes. You can source it from <code>init.lua</code> with <code>vim.cmd('source ~/.vimrc')</code>, but a Lua config is recommended long-term.</div>
+<h3 class="h5 mt-4">Is Neovim faster than Vim?</h3>
+<div>Both start in milliseconds. Neovim shines with asynchronous jobs, so plugins do not block the UI.</div>
+<h3 class="h5 mt-4">Can Neovim replace an IDE?</h3>
+<div>With LSP, Treesitter, a debugger (nvim-dap) and a few plugins, yes &mdash; but you assemble the pieces yourself or use a distribution.</div>
+<h3 class="h5 mt-4">Does it work with GUI clients?</h3>
+<div>Yes: Neovide, VimR, Neovim-Qt and others embed Neovim through its RPC API.</div>
+<h3 class="h5 mt-4">Where do I get help?</h3>
+<div>Use <code>:help &lt;topic&gt;</code> inside Neovim &mdash; it is excellent &mdash; or search <code>:help index</code>.</div>

@@ -1,0 +1,39 @@
+@page
+@{
+    ViewData["Title"] = "Configuring with Lua";
+    ViewData["Tag"] = "Ecosystem";
+    ViewData["Lead"] = "Lua is fast, simple and a first-class citizen in Neovim.";
+}
+
+        <div class="row align-items-center g-4 mb-4">
+            <div class="col-md-3 text-center"><img class="img-fluid" style="max-width:160px" src="~/img/lua.svg" alt="Lua logo" /></div>
+            <div class="col-md-9"><p class="mb-0">Neovim embeds LuaJIT. Everything you can do in Vimscript you can do in Lua through the <code>vim</code> global: <code>vim.opt</code>, <code>vim.keymap</code>, <code>vim.api</code> and <code>vim.cmd</code>.</p></div>
+        </div>
+        <h2>Recommended layout</h2>
+        <pre class="code-block" data-lang="tree"><code>~/.config/nvim/
+├── init.lua
+└── lua/
+    ├── options.lua
+    ├── keymaps.lua
+    └── plugins/
+        └── init.lua</code></pre>
+        <h2>Example init.lua</h2>
+        <pre class="code-block" data-lang="lua"><code>vim.g.mapleader = " "
+
+-- options
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+
+-- keymaps
+vim.keymap.set("n", "&lt;leader&gt;w", "&lt;cmd&gt;write&lt;cr&gt;", { desc = "Save file" })
+vim.keymap.set("n", "&lt;leader&gt;q", "&lt;cmd&gt;quit&lt;cr&gt;", { desc = "Quit" })
+
+-- autocommand: highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function() vim.highlight.on_yank() end,
+})</code></pre>
+        <h2>API cheat sheet</h2>
+        <div class="table-responsive"><table class="table nv-table table-striped"><thead><tr><th>Lua call</th><th>Purpose</th></tr></thead><tbody><tr><td><code>vim.opt.&lt;name&gt; = value</code></td><td>Set an option</td></tr><tr><td><code>vim.keymap.set(mode, lhs, rhs, opts)</code></td><td>Create a mapping</td></tr><tr><td><code>vim.api.nvim_create_autocmd()</code></td><td>Run code on events</td></tr><tr><td><code>vim.cmd("...")</code></td><td>Run an Ex command</td></tr><tr><td><code>require("module")</code></td><td>Load a Lua module from <code>lua/</code></td></tr></tbody></table></div>
+

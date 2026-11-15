@@ -1,0 +1,116 @@
+@page
+@{
+ViewData["Title"] = "Home";
+}
+@section Hero {
+<header class="page-hero landing-hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="badge badge-nv-green mb-3">hyperextensible &middot; Vim-based &middot; Lua-powered</span>
+        <h1>Edit at the speed of <span class="hl-green">thought</span> with <span class="hl-blue">Neovim</span><span class="cursor">&nbsp;</span></h1>
+        <p class="lead my-4">NeoVimProject is your guide to the modern terminal editor: learn the fundamentals, build a config in Lua and explore the plugin ecosystem.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-nv btn-lg" asp-page="/Install">Get started</a>
+          <a class="btn btn-nv-outline btn-lg" asp-page="/Modes">Learn the modes</a>
+          <a class="btn btn-nv-outline btn-lg" asp-page="/Register">register</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid hero-img" src="~/img/hero.svg" alt="Neovim editing an init.lua file" />
+      </div>
+    </div>
+  </div>
+</header>
+}
+
+<section class="mb-5">
+  <h2>What you will find here</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+    <div class="col">
+      <div class="card nv-card h-100">
+        <div class="card-body"><span class="badge badge-nv-blue mb-2">Learn</span>
+          <h3 class="h5 card-title">Learn the editor</h3>
+          <p class="card-text">Modes, motions, operators and a searchable keybinding table &mdash; from first <code>i</code> to fluent editing.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card nv-card h-100">
+        <div class="card-body"><span class="badge badge-nv-blue mb-2">Ecosystem</span>
+          <h3 class="h5 card-title">Build your setup</h3>
+          <p class="card-text">Configure Neovim in Lua, add plugins with lazy.nvim and wire up LSP and Treesitter.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card nv-card h-100">
+        <div class="card-body"><span class="badge badge-nv-blue mb-2">Themes</span>
+          <h3 class="h5 card-title">Pick your look</h3>
+          <p class="card-text">Browse popular colorschemes and see the default Neovim palette used on this site.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card nv-card h-100">
+        <div class="card-body"><span class="badge badge-nv-blue mb-2">Distros</span>
+          <h3 class="h5 card-title">Start from a distro</h3>
+          <p class="card-text">Compare LazyVim, NvChad, AstroNvim and Kickstart before writing your own config.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card nv-card h-100">
+        <div class="card-body"><span class="badge badge-nv-blue mb-2">History</span>
+          <h3 class="h5 card-title">Understand the history</h3>
+          <p class="card-text">From vi in 1976 to the Lua-powered Neovim of today.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card nv-card h-100">
+        <div class="card-body"><span class="badge badge-nv-blue mb-2">FAQ</span>
+          <h3 class="h5 card-title">Get answers fast</h3>
+          <p class="card-text">Common questions about Vim vs Neovim, performance and learning curve.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mb-5">
+  <div class="row g-4 text-center">
+    <div class="col-8 col-md-4">
+      <div class="stat">
+        <div class="num">2014</div>Project forked
+      </div>
+    </div>
+    <div class="col-8 col-md-4">
+      <div class="stat">
+        <div class="num">Lua</div>First-class config
+      </div>
+    </div>
+    <div class="col-8 col-md-4">
+      <div class="stat">
+        <div class="num">LSP</div>Built in
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mb-5">
+  <h2>Quick taste</h2>
+  <p>Opening a file, jumping to a function and renaming a symbol takes only a few keystrokes:</p>
+  <pre class="code-block" data-lang="shell"><code>nvim main.lua " open a file
+      /function " search
+      ciw " change inner word
+      :wq " save and quit</code></pre>
+</section>
+<section class="cta-band d-md-flex align-items-center justify-content-between gap-4">
+  <div>
+    <h2 class="h3 mb-1" style="margin:0">Ready to :wq your old editor?</h2>
+    <p class="mb-md-0 text-secondary">Create a free account to save your favourite keybindings and configs.</p>
+  </div>
+  <div class="d-flex gap-2 mt-3 mt-md-0">
+    <a class="btn btn-nv" asp-page="/Register">Register</a>
+    <a class="btn btn-nv-outline" asp-page="/Login">Login</a>
+  </div>
+</section>
